@@ -19,7 +19,7 @@ return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_module
 gulp.task('serve', gulp.series('sass', function() {
 
     browserSync.init({
-        server: "./src"  
+        server: "./"  
     });
 
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series('sass'));

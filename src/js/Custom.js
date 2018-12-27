@@ -91,7 +91,7 @@ for(var key in scenes) {
     // skip loop if the property is from prototype
     if(!obj.hasOwnProperty(prop)) continue;
 
-    new ScrollMagic.Scene({triggerElement: '#' + prop,})
+    new ScrollMagic.Scene({ triggerElement: '#' + prop })
         .setClassToggle('#' + obj[prop], 'active')
         .addTo(controller);
   }
