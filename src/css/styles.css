@@ -3065,9 +3065,17 @@ input[type="button"].btn-block {
   padding-bottom: 0.5rem; }
 
 .navbar-collapse {
+
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center; }
+
+@media (max-width: 767px) {
+  .navbar-collapse
+    {
+        background-color: #3883d8;
+    }
+}
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
