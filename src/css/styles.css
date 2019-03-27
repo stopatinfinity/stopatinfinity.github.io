@@ -241,7 +241,7 @@ figure {
   margin: 0 0 1rem; }
 
 img {
-  opacity: 1;
+  background-color: rgb(300, 300, 300);
   width: 80px;
   height: auto;
   vertical-align: middle;
