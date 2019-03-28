@@ -3093,7 +3093,7 @@ input[type="button"].btn-block {
   display: inline-block;
   width: 1.0em;
   height: 1.0em;
-  vertical-align: middle;
+  vertical-align: right;
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%; }
