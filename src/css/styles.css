@@ -1744,9 +1744,13 @@ textarea.form-control {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
-.btn {
+.btn-custom
+{
   height: 50px;
   width: 100px;
+}
+
+.btn {
   display: inline-block;
   font-weight: 200;
   color: #212529;
