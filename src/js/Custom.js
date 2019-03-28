@@ -1,5 +1,6 @@
 //Shoutout to Alex from css-tricks.com for sharing this snippet!
-var TxtType = function(el, toRotate, period) {
+var TxtType = function(el, toRotate, period) 
+    {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
@@ -13,10 +14,13 @@ var TxtType = function(el, toRotate, period) {
         var i = this.loopNum % this.toRotate.length;
         var fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        if (this.isDeleting) 
+        {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } 
+        else 
+        {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
 
         this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
@@ -24,28 +28,39 @@ var TxtType = function(el, toRotate, period) {
         var that = this;
         var delta = 100 - Math.random() * 50;
 
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
+        if (this.isDeleting) 
+        { 
+          delta /= 2; 
         }
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
+        if (!this.isDeleting && this.txt === fullTxt) 
+        {
+          delta = this.period;
+          this.isDeleting = true;
+        } 
+        else if (this.isDeleting && this.txt === '') 
+        {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() 
+        {
+          that.tick();
+        }
+        , delta);
     };
 
-    window.onload = function() {
+    window.onload = function() 
+    {
         var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
+        for (var i=0; i<elements.length; i++) 
+        {
             var toRotate = elements[i].getAttribute('data-type');
             var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
+            if (toRotate) 
+            {
               new TxtType(elements[i], JSON.parse(toRotate), period);
             }
         }
@@ -58,36 +73,46 @@ var TxtType = function(el, toRotate, period) {
 
 // For ScrollAction
 // Init controller
-var controller = new ScrollMagic.Controller({
-  globalSceneOptions: {
+var controller = new ScrollMagic.Controller(
+{
+  globalSceneOptions: 
+  {
     duration: $('section').height(),
     triggerHook: .025,
     reverse: true
   }
-});
+}
+);
 
-var scenes = {
-  'intro': {
+var scenes = 
+{
+  'intro': 
+  {
     'intro': 'intro-anchor'
   },
-  'scene2': {
+  'scene2': 
+  {
     'section-1': 'anchor1'
   },
-  'scene3': {
+  'scene3': 
+  {
     'section-2': 'anchor2'
   },
-  'scene4': {
+  'scene4': 
+  {
     'section-3': 'anchor3'
   }
 }
 
-for(var key in scenes) {
+for(var key in scenes) 
+{
   // skip loop if the property is from prototype
   if (!scenes.hasOwnProperty(key)) continue;
 
   var obj = scenes[key];
 
-  for (var prop in obj) {
+  for (var prop in obj) 
+  {
     // skip loop if the property is from prototype
     if(!obj.hasOwnProperty(prop)) continue;
 
@@ -100,10 +125,13 @@ for(var key in scenes) {
 
 // Change behaviour of controller
 // to animate scroll instead of jump
-controller.scrollTo(function(target) {
+controller.scrollTo(function(target) 
+{
 
-  TweenMax.to(window, 0.5, {
-    scrollTo : {
+  TweenMax.to(window, 0.5, 
+  {
+    scrollTo : 
+    {
       y : target,
       autoKill : true // Allow scroll position to change outside itself
     },
@@ -116,18 +144,23 @@ controller.scrollTo(function(target) {
 //  Bind scroll to anchor links using Vanilla JavaScript
 var anchor_nav = document.querySelector('.anchor-nav');
 
-anchor_nav.addEventListener('click', function(e) {
+anchor_nav.addEventListener('click', function(e) 
+{
   var target = e.target,
       id     = target.getAttribute('href');
 
-  if(id !== null) {
-    if(id.length > 0) {
+  if(id !== null) 
+  {
+    if(id.length > 0) 
+    {
       e.preventDefault();
       controller.scrollTo(id);
 
-      if(window.history && window.history.pushState) {
+      if(window.history && window.history.pushState) 
+      {
         history.pushState("", document.title, id);
       }
     }
   }
-});
+}
+);
