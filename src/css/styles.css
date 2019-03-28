@@ -1746,7 +1746,7 @@ textarea.form-control {
 
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 200;
   color: #212529;
   text-align: center;
   vertical-align: middle;
@@ -1755,7 +1755,7 @@ textarea.form-control {
   border: 1px solid transparent;
   padding: 0.5rem 0.5rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: normal;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
