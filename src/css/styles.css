@@ -268,6 +268,8 @@ label {
   margin-bottom: 0.5rem; }
 
 button {
+  height: 200px;
+  width: 200px;
   background-color: transparent;
   border-radius: 0; }
 
