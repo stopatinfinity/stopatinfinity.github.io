@@ -1745,6 +1745,8 @@ textarea.form-control {
       margin-bottom: 0; } }
 
 .btn {
+  height: 50px;
+  width: 100px;
   display: inline-block;
   font-weight: 200;
   color: #212529;
