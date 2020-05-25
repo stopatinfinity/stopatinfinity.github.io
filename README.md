@@ -1,2 +1,2 @@
-# Nevin Choi - Personal Website
-Personal website for portfolio showcase and gateway to learn web development with Bootstrap.
+# My Website
+Yes, this is the source code for my website.
