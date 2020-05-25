@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --black: #000000;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -62,7 +63,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #EFEFEF;
+  color: white;
 }
 
 body {
@@ -73,9 +74,16 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: white;
   text-align: left;
-  background-color: #efefef; }
+  background-color: #000000; }
+
+  div > img {
+    width: auto;
+    height: auto;
+    max-width: 75%;
+    max-height: 75%;
+  }
 
 .middle{
   position: absolute;
@@ -92,7 +100,7 @@ body {
   margin: 10px;
   border-radius: 30%;
   box-shadow: 0 5px 15px -5px #00000070;
-  color: #3498db;
+  color: #000000;
   overflow: hidden;
   position: relative;
 }

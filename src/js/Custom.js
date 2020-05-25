@@ -14,12 +14,10 @@ var TxtType = function(el, toRotate, period)
         var i = this.loopNum % this.toRotate.length;
         var fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) 
-        {
+        if (this.isDeleting) {
           this.txt = fullTxt.substring(0, this.txt.length - 1);
         } 
-        else 
-        {
+        else {
           this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
 
@@ -28,25 +26,21 @@ var TxtType = function(el, toRotate, period)
         var that = this;
         var delta = 100 - Math.random() * 50;
 
-        if (this.isDeleting) 
-        { 
-          delta /= 2; 
+        if (this.isDeleting) {
+          delta /= 4; 
         }
 
-        if (!this.isDeleting && this.txt === fullTxt) 
-        {
+        if (!this.isDeleting && this.txt === fullTxt) {
           delta = this.period;
           this.isDeleting = true;
         } 
-        else if (this.isDeleting && this.txt === '') 
-        {
+        else if (this.isDeleting && this.txt === '') {
           this.isDeleting = false;
           this.loopNum++;
           delta = 500;
         }
 
-        setTimeout(function() 
-        {
+        setTimeout(function() {
           that.tick();
         }
         , delta);
@@ -55,7 +49,7 @@ var TxtType = function(el, toRotate, period)
     window.onload = function() 
     {
         var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) 
+        for (var i = 0; i < elements.length; i++) 
         {
             var toRotate = elements[i].getAttribute('data-type');
             var period = elements[i].getAttribute('data-period');
@@ -73,10 +67,8 @@ var TxtType = function(el, toRotate, period)
 
 // For ScrollAction
 // Init controller
-var controller = new ScrollMagic.Controller(
-{
-  globalSceneOptions: 
-  {
+var controller = new ScrollMagic.Controller( {
+  globalSceneOptions: {
     duration: $('section').height(),
     triggerHook: .025,
     reverse: true
@@ -84,10 +76,8 @@ var controller = new ScrollMagic.Controller(
 }
 );
 
-var scenes = 
-{
-  'intro': 
-  {
+var scenes = {
+  'intro': {
     'intro': 'intro-anchor'
   },
   'scene2': 
